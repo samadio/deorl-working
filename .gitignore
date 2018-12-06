@@ -102,3 +102,12 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# Configuration directories/files of editors/IDEs/applications
+.directory
+.idea/
+.pycharm/
+.clion/
+.atom/
+.vscode/
+.clang-format
