@@ -36,7 +36,7 @@ class PacManBeast:
         self.features_lastcall = np.random.randn(self.dim_of_feat_space)
         self.features_lastcall[:] = np.nan
 
-# Stateful functions (features)
+# Features
     def feat_01(self, state, action):
         return 1.0
 
@@ -56,12 +56,10 @@ class PacManBeast:
         self.features_lastcall = np.asarray([self.feat_01(state, action), self.feat_02(state, action), self.feat_03(state, action), self.feat_04(state, action), self.feat_05(state, action)])
         return self.features_lastcall
 
-# Stateful functions
+# Functions
     def QFunc(self, state, action, params):
         return np.dot(self.features(state, action), params)
 
-
-# Stateless functions (i.e. internal routines)
     def observe(self, state_vector):
         for i in range(self.backward_memory, 0, -1):
             self.ObsEvol[i] = self.ObsEvol[i-1]
