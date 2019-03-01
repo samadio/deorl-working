@@ -570,10 +570,10 @@ class pacman_RL_environment(RL_Environment):
 # Left here in case a migration of `psi` to `RL_system()` is needed or wanted, as naive migration is impossible.
 # In that case, mind to comment the other class declaration.
 
-# class pacman_RL_system(RL_system):
+# class RL_system(RL_system):
 
 
-class pacman_RL_system:
+class RL_system:
     def __init__(self, _environment):
         self.environment = _environment
         self.old_state = self.environment.getState()
@@ -740,7 +740,7 @@ class pacman_RL_system:
 #%%
 # INITIALIZE AGENT
 
-agent = pacman_RL_system(pacman_RL_environment())
+agent = RL_system(pacman_RL_environment())
 
 
 #%%
